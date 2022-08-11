@@ -20,12 +20,20 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/**/*"
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/JS/main.js",
+              "src/assets/JS/choices.min.js",
+              "src/assets/JS/litepicker.js",
+              "src/assets/JS/markdown.js",
+              "src/assets/JS/scripts.js",
+              "src/assets/JS/toasts.js"
+            ]
           },
           "configurations": {
             "production": {

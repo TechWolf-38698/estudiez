@@ -1,0 +1,309 @@
+<nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white"
+    id="sidenavAccordion">
+    <!-- <img src="../../../assets/img/favicon.png" height="52px" alt=""> -->
+    <a class="navbar-brand ps-4  pe-0 me-0 w-auto" [routerLink]="'/dashboard'"> eStudiez</a>
+    <ul class="navbar-nav align-items-center ms-5">
+        <li class="nav-item dropdown no-caret d-none d-md-block me-3">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" (click)="showHide()" href="javascript:void(0);"
+                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="fw-500 fs-3">Modules</div>
+                <i class="fas fa-chevron-right dropdown-arrow"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end py-0 me-sm-n15 me-lg-0  animated--fade-in-up mars-0001"
+                id="mainMenu" aria-labelledby="navbarDropdownDocs">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="d-flex align-items-center">
+                            <!-- <div class="nav flex-column nav-pills me-3 p-3" id="v-pills-tab" role="tablist"
+                                aria-orientation="vertical">
+                                <button class="nav-link  active  " id="v-pills-home-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                                    aria-selected="true">Acedemics & learning</button>
+                                <button class="nav-link " id="v-pills-profile-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-profile" type="button" role="tab"
+                                    aria-controls="v-pills-profile" aria-selected="false">Communication</button>
+                                <button class="nav-link " id="v-pills-messages-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-messages" type="button" role="tab"
+                                    aria-controls="v-pills-messages" aria-selected="false">Administration</button>
+
+                            </div> -->
+                            <div class="tab-content w-100" id="v-pills-tabContent">
+                                <div class="tab-pane fade  show active" id="v-pills-home" role="tabpanel"
+                                    aria-labelledby="v-pills-home-tab">
+                                    <div class="container-fluid p-5">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h4> <i class="fa-solid fa-screwdriver-wrench cl-is fa-2x p-1"></i>
+                                                    Class & Subject</h4>
+                                                <ul class="my-list-style">
+                                                    <a routerLink="/manage-class-and-subjects">
+                                                        <li (click)="showHide()" >Manage Class & Subjects</li>
+                                                    </a>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4><i class="fa-solid fa-users-between-lines cl-is fa-2x p-1"></i>
+                                                    Students</h4>
+                                                <ul class="my-list-style">
+                                                    <a routerLink="/students/manage">
+                                                        <li (click)="showHide()" >Manage Students</li>
+                                                    </a>
+                                                    <a routerLink="/manage-alumni">
+                                                        <li (click)="showHide()" >Manage Alumni</li>
+                                                    </a>
+
+
+                                                </ul>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4><i class="fa-solid fa-user-group  cl-is fa-2x p-1"></i>Teacher/Admin
+                                                    Staff</h4>
+                                                <ul class="my-list-style">
+                                                    <a routerLink="/teachers/manage">
+                                                        <li (click)="showHide()" >Manage Teacher/Admin Staff</li>
+                                                    </a>
+                                                    <a routerLink="/subject-allocation">
+                                                        <li (click)="showHide()" >Subject Allocation</li>
+                                                    </a>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4><i class="fa-solid fa-user-secret cl-is fa-2x p-1"></i>Parent
+                                                </h4>
+                                                <ul class="my-list-style">
+                                                    <a href="./Pages/manage-parents.html">
+                                                        <li (click)="showHide()" >Manage Parents</li>
+                                                    </a>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row pt-3">
+                                            <div class="col-md-3">
+
+                                                <h4> <i class="fa-regular fa-paste cl-is fa-2x p-1"></i> Assessment
+                                                    & Grading</h4>
+                                                <ul class="my-list-style">
+                                                    <li (click)="showHide()" >Manage Assessment & Grading</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4> <i class="fa-solid fa-square-check cl-is fa-2x p-1"></i>Attendance
+                                                </h4>
+                                                <ul class="my-list-style">
+                                                    <a href="./Pages/attendence.html">
+                                                        <li (click)="showHide()" >Manage Attendance </li>
+                                                    </a>
+                                                </ul>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4><i class="fa-solid fa-square-plus cl-is fa-2x p-1"></i>Health
+                                                    Records</h4>
+                                                <ul class="my-list-style">
+                                                    <a href="./Pages/health-records-student.html">
+                                                        <li (click)="showHide()" >Student</li>
+                                                    </a>
+                                                    <a href="./Pages/health-records-teacher.html">
+                                                        <li (click)="showHide()" >Teacher</li>
+                                                    </a>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4><i class="fa-solid fa-comments cl-is fa-2x p-1"></i>Social
+                                                    Learning</h4>
+                                                <ul class="my-list-style">
+                                                    <a href="./Pages/social-learning.html">
+                                                        <li (click)="showHide()" >Social Learning</li>
+                                                    </a>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4><i class="fas fa-star-of-david cl-is fa-2x p-1"></i>LMS</h4>
+                                                <ul class="my-list-style">
+                                                    <a href="./Pages/lms.html">
+                                                        <li (click)="showHide()" >Learning Management System</li>
+                                                    </a>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                                    aria-labelledby="v-pills-profile-tab">
+                                    <div class="container-fluid p-5">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h4> <i class="fa-solid fa-envelope cl-is fa-2x p-1"></i>
+                                                    Messaging</h4>
+                                                <ul class="my-list-style">
+                                                    <li (click)="showHide()" >SMS</li>
+                                                    <li (click)="showHide()" >Emails</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4><i class="fa-solid fa-calendar-alt cl-is fa-2x p-1"></i>
+                                                    Events</h4>
+                                                <ul class="my-list-style">
+                                                    <a href="./Pages/manage-event.html-">
+                                                        <li (click)="showHide()" >Manage Events</li>
+                                                    </a>
+                                                    <a href="./Pages/manage-schedules.html">
+                                                        <li (click)="showHide()" >Manage Class Schedule</li>
+                                                    </a>
+
+                                                </ul>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4><i class="fa-solid fa-clipboard  cl-is fa-2x p-1"></i>Notice
+                                                    Board</h4>
+                                                <ul class="my-list-style">
+                                                    <a href="./Pages/manage-notices.html">
+                                                        <li (click)="showHide()" >Manage Notices</li>
+                                                    </a>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4><i class="fa-solid fa-clipboard cl-is fa-2x p-1"></i>Activites
+                                                </h4>
+                                                <ul class="my-list-style">
+                                                    <a href="./Pages/student-activities.html">
+                                                        <li (click)="showHide()" >Student Activites</li>
+                                                    </a>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                                    aria-labelledby="v-pills-messages-tab">
+                                    <div class="container-fluid p-5">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h4> <i class="fa-solid fa-book cl-is fa-2x p-1"></i>
+                                                    Library</h4>
+                                                <ul class="my-list-style">
+                                                    <a href="./Pages/manage-books.html">
+                                                        <li (click)="showHide()" >Manage Books</li>
+                                                    </a>
+                                                    <li (click)="showHide()" >Check-in Records</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4><i class="fa-solid fa-receipt cl-is fa-2x p-1"></i>
+                                                    Reports</h4>
+                                                <ul class="my-list-style">
+                                                    <a href="./Pages/reports-academics.html">
+                                                        <li (click)="showHide()" >View Reports</li>
+                                                    </a>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                        <div class="row pt-3">
+                                            <div class="col-md-3">
+
+                                                <h4> <i class="fa-solid fa-sack-dollar cl-is fa-2x p-1"></i> Fees &
+                                                    Invoicing</h4>
+                                                <ul class="my-list-style">
+                                                    <li (click)="showHide()" >Manage Fees & Invoicing</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4> <i class="fa-solid fa-calculator cl-is fa-2x p-1"></i>Finance
+                                                    & Accounting
+                                                </h4>
+                                                <ul class="my-list-style">
+                                                    <li (click)="showHide()" >Manage Finance & Accounting</li>
+                                                </ul>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4><i
+                                                        class="fa-solid fa-hand-holding-heart cl-is fa-2x p-1"></i>Fundraising
+                                                </h4>
+                                                <ul class="my-list-style">
+                                                    <li (click)="showHide()" >Mahage Campaigns</li>
+                                                    <li (click)="showHide()" >Front End</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4><i class="fa-solid fa-address-card cl-is fa-2x p-1"></i>CRM-Enroll
+                                                    &
+                                                    Forms</h4>
+                                                <ul class="my-list-style">
+                                                    <li (click)="showHide()" >Students Recruitment & Forms</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4><i class="fas fa-receipt cl-is fa-2x p-1"></i>E-Commerce
+                                                </h4>
+                                                <ul class="my-list-style">
+                                                    <li (click)="showHide()" >Dashboard</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <!-- Navbar Items-->
+    <ul class="navbar-nav align-items-center ms-auto">
+
+        <!-- * * Note: * * Visible only below the lg breakpoint-->
+        <li class="nav-item dropdown no-caret me-3 ">
+            <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="searchDropdown" href="#" role="button"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="search"></i></a>
+            <!-- Dropdown - Search-->
+            <div class="dropdown-menu drop-down-my dropdown-menu-end p-3 shadow animated--fade-in-up"
+                aria-labelledby="searchDropdown">
+                <form class="form-inline me-auto w-100">
+                    <div class="input-group input-group-joined input-group-solid">
+                        <input class="form-control pe-0" type="text" placeholder="Search for..." aria-label="Search"
+                            aria-describedby="basic-addon2" />
+                        <div class="input-group-text"><i data-feather="search"></i></div>
+                    </div>
+                </form>
+            </div>
+        </li>
+        <li class="nav-item dropdown no-caret d-none d-sm-block me-3 dropdown-notifications">
+            <a class="btn btn-icon btn-transparent-dark"><i data-feather="bell"></i></a>
+
+        </li>
+        <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
+            <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" role="button"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid"
+                    src="assets/img/illustrations/profiles/profile-1.png" /></a>
+            <div class="dropdown-menu drop-down-my dropdown-menu-end border-0 shadow animated--fade-in-up"
+                aria-labelledby="navbarDropdownUserImage">
+                <h6 class="dropdown-header d-flex align-items-center">
+                    <img class="dropdown-user-img" src="assets/img/illustrations/profiles/profile-1.png" />
+                    <div class="dropdown-user-details">
+                        <div class="dropdown-user-details-name">Valerie Luna</div>
+                        <div class="dropdown-user-details-email"><a href="cdn-cgi/l/email-protection.html"
+                                class="__cf_email__"
+                                data-cfemail="a7d1cbd2c9c6e7c6c8cb89c4c8ca">[email&#160;protected]</a></div>
+                    </div>
+                </h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#!">
+                    <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
+                    Account
+                </a>
+                <a class="dropdown-item" href="" (click)="this.logout()">
+                    <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
+                    Logout
+                </a>
+            </div>
+        </li>
+    </ul>
+</nav>
