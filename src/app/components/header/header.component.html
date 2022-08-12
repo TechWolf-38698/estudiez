@@ -1,0 +1,25 @@
+<header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+    <!-- <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+        class="rounded border-bottom border-primary " aria-label="breadcrumb">
+        <ol class="breadcrumb px-3 py-2 rounded mb-0">
+            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+            <li class="breadcrumb-item active">Breadcrumbs</li>
+        </ol>
+    </nav> -->
+    <div class="container-fluid px-4">
+        <div class="page-header-content ">
+
+            <div class="row align-items-center justify-content-between">
+
+                <div class="col-auto mt-4">
+                    <h1 class="page-header-title">
+                        <div class="page-header-icon" [ngClass]="{'d-none': icon === ''}">
+                            <i class="fas fa-{{icon}}"></i>
+                        </div>
+                        {{title}}
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

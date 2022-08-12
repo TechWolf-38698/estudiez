@@ -1,0 +1,30 @@
+<div class="row mt-2  justify-content-center align-items-center">
+    <div *ngIf="!this.isLoading" class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Discription</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="this.courses.length > 0">
+                <tr *ngFor="let course of courses">
+                    <td>{{course.name}}</td>
+                    <td>{{course.discription}}</td>
+                    <td>
+                        <a (click)="onDelete(course.id)">
+                            <i class="mars-0005 fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="this.courses.length == 0">
+                <td colspan="4" class="alert alert-danger">No Courses Found</td>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="this.isLoading" class="spinner-border text-warning my-5 mySpinner" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>

@@ -1,0 +1,168 @@
+<nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white"
+    id="sidenavAccordion">
+    <!-- <img src="assets/img/favicon.png" alt=""> -->
+    <a class="navbar-brand ps-2  pe-0 me-0 w-auto" [routerLink]="'/home'" style="color: #f7971e; font-family: arial !important; font-weight: bold;"> eStudiez</a>
+    <ul class="navbar-nav align-items-center ms-3">
+        <li class="nav-item dropdown no-caret d-block me-3">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" (click)="showHide()" role="button"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="fw-500 fs-3">Menus</div>
+                <i class="fas fa-chevron-right dropdown-arrow"></i>
+            </a>
+            <div class="dropdown-menu animated--fade-in-up mars-0001" id="mainMenu"
+                aria-labelledby="navbarDropdownDocs">
+                <div class="container-fluid p-5">
+                    <div class="row justify-content-md-between justify-content-lg-start">
+
+                        <div class="col-sm-6 col-md-6 col-lg-4 mt-3">
+                            <h4 class="d-flex align-items-center"><i class="fa-solid fa-users-between-lines cl-is fa-2x me-3 p-1"></i>
+                                <span>Academic Progress</span></h4>
+                            <ul class="my-list-style">
+                                <a routerLink="/{{role}}/students/manage">
+                                    <li (click)="showHide()">Gradual Progress</li>
+                                </a>
+                                <!-- Only for teacher -->
+                                <a routerLink="/{{role}}/students/manage">
+                                    <li (click)="showHide()">Update Gradual Progress</li>
+                                </a>
+
+
+                            </ul>
+
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4 mt-3">
+                            <h4 class="d-flex align-items-center"><i class="fa-solid fa-user-group cl-is fa-2x me-3 p-1"></i>Study Resources</h4>
+                            <ul class="my-list-style">
+                                <a routerLink="/{{role}}/teachers/manage">
+                                    <li (click)="showHide()">External Sites</li>
+                                </a>
+                                <a routerLink="/{{role}}/subject-allocation">
+                                    <li (click)="showHide()">Videos</li>
+                                </a>
+                                <a routerLink="/{{role}}/subject-allocation">
+                                    <li (click)="showHide()">TextBooks</li>
+                                </a>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4 mt-3">
+                            <h4 class="d-flex align-items-center"><i class="fa-solid fa-user-secret cl-is fa-2x me-3 p-1"></i>Revision Classes
+                            </h4>
+                            <ul class="my-list-style">
+                                <a routerLink="/{{role}}/extra-classes">
+                                    <li (click)="showHide()">Extra Classes</li>
+                                </a>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4 mt-3">
+
+                            <h4 class="d-flex align-items-center"> <i class="fa-regular fa-paste cl-is fa-2x me-3 p-1"></i> Helplines</h4>
+                            <ul class="my-list-style">
+                                <li (click)="showHide()">Helplines</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-6 col-md-6 col-lg-4 mt-3">
+                            <h4 class="d-flex align-items-center"> <i class="fa-solid fa-square-check cl-is fa-2x me-3 p-1"></i>Internal Test</h4>
+                            <ul class="my-list-style">
+                                <a routerLink="/{{role}}/testmarks">
+                                    <li (click)="showHide()"> Test Marks</li>
+                                </a>
+                                <!-- Only for teacher -->
+                                <a routerLink="/{{role}}/tests">
+                                    <li (click)="showHide()">Internal Test</li>
+                                </a>
+                            </ul>
+
+                        </div>
+                        <!-- Only for Admin -->
+                        <div class="col-sm-6 col-md-6 col-lg-4 mt-3">
+                            <h4 class="d-flex align-items-center"><i class="fa-solid fa-square-plus cl-is fa-2x me-3 p-1"></i>Teachers</h4>
+                            <ul class="my-list-style">
+                                <a routerLink="/{{role}}/teachers">
+                                    <li (click)="showHide()">Manage Teachers</li>
+                                </a>
+
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4 mt-3">
+                            <h4 class="d-flex align-items-center"><i class="fa-solid fa-comments cl-is fa-2x me-3 p-1"></i>Students</h4>
+                            <ul class="my-list-style">
+                                <a routerLink="/{{role}}/students">
+                                    <li (click)="showHide()">Manage Students</li>
+                                </a>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4 mt-3">
+                            <h4 class="d-flex align-items-center"><i class="fas fa-star-of-david cl-is fa-2x me-3 p-1"></i>Parents</h4>
+                            <ul class="my-list-style">
+                                <a routerLink="/{{role}}/parents">
+                                    <li (click)="showHide()">Manage Parents</li>
+                                </a>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4 mt-3">
+                            <h4 class="d-flex align-items-center"><i class="fas fa-star-of-david cl-is fa-2x me-3 p-1"></i>Feedback</h4>
+                            <ul class="my-list-style">
+                                <a routerLink="/{{role}}/feedback">
+                                    <li (click)="showHide()">Feedback Form</li>
+                                </a>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4 mt-3">
+                            <h4 class="d-flex align-items-center"><i class="fas fa-star-of-david cl-is fa-2x me-3 p-1"></i>Courses</h4>
+                            <ul class="my-list-style">
+                                <a routerLink="/{{role}}/courses">
+                                    <li (click)="showHide()">Manage Courses</li>
+                                </a>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4 mt-3">
+                            <h4 class="d-flex align-items-center"><i class="fas fa-star-of-david cl-is fa-2x me-3 p-1"></i>Batch</h4>
+                            <ul class="my-list-style">
+                                <a routerLink="/{{role}}/batches">
+                                    <li (click)="showHide()">Manage Batch</li>
+                                </a>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+
+        </li>
+    </ul>
+    <!-- Navbar Items-->
+    <ul class="navbar-nav align-items-center ms-auto">
+
+        <!-- * * Note: * * Visible only below the lg breakpoint-->
+        
+        <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
+            <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" role="button"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid"
+                    src="assets/img/illustrations/profiles/profile-1.png" /></a>
+            <div class="dropdown-menu drop-down-my dropdown-menu-end border-0 shadow animated--fade-in-up"
+                aria-labelledby="navbarDropdownUserImage">
+                <h6 class="dropdown-header d-flex align-items-center">
+                    <img class="dropdown-user-img" src="assets/img/illustrations/profiles/profile-1.png" />
+                    <div class="dropdown-user-details">
+                        <div class="dropdown-user-details-name">Valerie Luna</div>
+                        <div class="dropdown-user-details-email"><a routerLink="/{{role}}cdn-cgi/l/email-protection.html"
+                                class="__cf_email__"
+                                data-cfemail="a7d1cbd2c9c6e7c6c8cb89c4c8ca">[email&#160;protected]</a></div>
+                    </div>
+                </h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item">
+                    <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
+                    Account
+                </a>
+                <a class="dropdown-item" (click)="this.logout()">
+                    <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
+                    Logout
+                </a>
+            </div>
+        </li>
+    </ul>
+</nav>

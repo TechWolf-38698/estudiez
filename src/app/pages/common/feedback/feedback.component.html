@@ -1,0 +1,18 @@
+<app-header title="Feedback" icon=""></app-header>
+<div class="container py-5 mt-n10 bg-white rounded animated--fade-in-up"
+    style="height: auto; animation-duration: 500ms !important;">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <form novalidate [formGroup]="feedbackForm" (ngSubmit)="Submit()">
+                <div class="form-group mb-3">
+                    <label class="mb-1" for="message">Feedback Description</label>
+                    <textarea class="form-control" rows="3" placeholder="Description" formControlName="message"
+                        pattern=".*[^ ].*"></textarea>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary" [disabled]="feedbackForm.invalid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

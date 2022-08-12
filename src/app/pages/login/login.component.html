@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html class="fluid top-full menuh-top">
+  <!-- Mirrored from bayviewhighschool.classe365.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Jul 2022 11:41:41 GMT -->
+
+  <head>
+    <title>eStudiez</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Welcome to Bay View High School SIS and LMS Portal. Bay View High School use Classe365 revolutionary Student Information System and Learning Management System."
+    />
+    <meta name="author" content="revaxarts.com" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+    <meta name="robots" content="noindex,nofollow" />
+    <link
+      rel="shortcut icon"
+      href="https://classe365-assets.s3-us-west-1.amazonaws.com/customer_assets/bayviewhighschool/institute/profile/1595959572.png"
+      type="image/png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700"
+      rel="stylesheet"
+    />
+    <!-- CSS for login page and reset password page -->
+
+    <link
+      rel="stylesheet"
+      href="https://bayviewhighschool.classe365.com/css/library/login/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://bayviewhighschool.classe365.com/js/library/icons/fontawesome/css/fontawesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style type="text/css">
+      .svg-icon {
+        width: 0px;
+        height: 0px;
+      }
+
+      .svg-icon-no-color {
+        stroke: #b7b7b7;
+        fill: #b7b7b7;
+      }
+
+      .svg-icon-color {
+        stroke: var(--color-text-dark);
+        fill: var(--color-primary-dark);
+      }
+    </style>
+
+    <style>
+      :root {
+        --color-primary: #6772e4;
+        --color-secondary: #4de7e7;
+      }
+    </style>
+    <style>
+      .top-header-block {
+        background-image: url(assets/img/login-img.jpg) !important;
+      }
+    </style>
+    <style type="text/css">
+      .btn-primary,
+      .btn-primary:hover {
+        border-color: var(--color-primary) !important;
+        background: var(--color-primary) !important;
+        color: #fff !important;
+      }
+    </style>
+    <style type="text/css">
+      label {
+        max-width: 50%;
+        background: none !important;
+        margin-left: 0 !important;
+        text-align: left !important;
+        padding-left: 0px !important;
+      }
+
+      .formoid-flat-yellow .error {
+        margin-left: 0 !important;
+      }
+
+      .header {
+        background: url() no-repeat center center scroll;
+        background-size: cover !important;
+      }
+
+      video {
+        width: 100% !important;
+        height: 100%;
+        z-index: -100;
+      }
+
+      .bg {
+        background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.2),
+            rgba(36, 92, 193, 0.5)
+          ),
+          url("assets/img/login-img.jpg") no-repeat center center scroll;
+        background-size: cover;
+      }
+
+      .inst-container-block .inst-logo {
+        display: inline-block;
+      }
+
+      .document-body .fa {
+        font-weight: 700 !important;
+      }
+
+      .padding-none {
+        padding: 0px !important;
+      }
+    </style>
+  </head>
+
+  <body class="document-body">
+    <div class="content-blcok">
+      <div class="new_login" style="z-index: 999 !important">
+        <div class="bg">
+          <div class="block">
+            <!-- header top block -->
+            <header id="top">
+              <div class="tri-blk-header">
+                <div class="inst-container-block">
+                  <div class="inst-logo">
+                    <!-- <img
+                      src="https://classe365-assets.s3-us-west-1.amazonaws.com/customer_assets/bayviewhighschool/institute/profile/1595959572.png"
+                      class="logo"
+                      alt="Logo"
+                      border="0"
+                      style="height: 65px"
+                    /> -->
+                  </div>
+                  <div class="school_name inst-name-md">eStudiez</div>
+                  <div style="clear: both"></div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </header>
+
+            <!-- header top block -->
+            <div class="body-block">
+              <div id="signInAs">
+                <div class="triangle-top"></div>
+                <div class="right-block">
+                  <!-- Admin login form -->
+                  <div class="modal-header">
+                    <div
+                      (click)="this._ADMIN()"
+                      id="admin"
+                      class="header-title-block"
+                    >
+                      <div
+                        *ngIf="!this.admin"
+                        class="title block-title"
+                        style="user-select: none"
+                      >
+                        Sign in as Admin
+                      </div>
+                    </div>
+
+                    <div
+                      class="fields"
+                      [ngStyle]="{ display: admin ? '' : 'none' }"
+                      id="adminBlock"
+                    >
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="title title-color">Sign in as Admin</div>
+                          <div class="fieldsClosebtn" (click)="this._ADMIN()">
+                            <i class="fa fa-times pull-right"></i>
+                          </div>
+                        </div>
+                        <div
+                          class="a-login col-md-12 padding-none"
+                          id="adminLoginBlock"
+                        >
+                          <form>
+                            <div
+                              class="col-md-6 mrg-top-15"
+                              style="display: flex"
+                            >
+                              <i
+                                class="fa fa-user"
+                                style="
+                                  font-size: 20px;
+                                  margin-top: 10px;
+                                  border-bottom: 0.5px solid #d0d7dd !important;
+                                  color: #d0d7dd;
+                                "
+                              ></i>
+                              <input
+                                type="text"
+                                id="aUsername"
+                                class="form-control input-blk"
+                                name="username"
+                                placeholder="Username"
+                                [(ngModel)]="loginPayload.username"
+                              />
+                            </div>
+                            <div
+                              class="col-md-6 mrg-top-15 a-pass-blk"
+                              style="display: flex"
+                            >
+                              <i
+                                class="fa fa-lock"
+                                style="
+                                  font-size: 20px;
+                                  margin-top: 10px;
+                                  border-bottom: 0.5px solid #d0d7dd;
+                                  color: #d0d7dd;
+                                "
+                              ></i>
+                              <input
+                                type="password"
+                                id="aPassword"
+                                class="form-control input-blk"
+                                name="password"
+                                placeholder="Password"
+                                [(ngModel)]="loginPayload.password"
+                                required
+                              />
+                            </div>
+                            <span style="color: red">{{ error }}</span>
+                            <div class="clearfix"></div>
+                            <div class="">
+                              <div class="">
+                                <button
+                                  id="normalButton1"
+                                  type="submit"
+                                  class="btn"
+                                  style="
+                                    width: auto;
+                                    margin-top: 20px;
+                                    margin-left: 10px;
+                                    margin-bottom: 0px;
+                                    background: #6772e4;
+                                    color: #fff;
+                                  "
+                                  type="submit"
+                                  (click)="login()"
+                                  [disabled]="
+                                    !loginPayload.username ||
+                                    !loginPayload.password
+                                  "
+                                >
+                                  Log in
+                                </button>
+                              </div>
+                              <div class="a-forgot-blk">
+                                Don't have an account?
+                                <a [routerLink]="'/register'">Register</a>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <!-- Admin login form -->
+                  <!-- Teacher login form -->
+                  <div class="modal-header">
+                    <div
+                      (click)="this._TEACHER()"
+                      id="admin"
+                      class="header-title-block"
+                    >
+                      <div
+                        *ngIf="!this.teacher"
+                        class="title block-title"
+                        style="user-select: none"
+                      >
+                        Sign in as Teachers
+                      </div>
+                    </div>
+
+                    <div
+                      class="fields"
+                      [ngStyle]="{ display: teacher ? '' : 'none' }"
+                      id="adminBlock"
+                    >
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="title title-color">
+                            Sign in as Teachers
+                          </div>
+                          <div class="fieldsClosebtn" (click)="this._TEACHER()">
+                            <i class="fa fa-times pull-right"></i>
+                          </div>
+                        </div>
+                        <div
+                          class="a-login col-md-12 padding-none"
+                          id="adminLoginBlock"
+                        >
+                          <form>
+                            <div
+                              class="col-md-6 mrg-top-15"
+                              style="display: flex"
+                            >
+                              <i
+                                class="fa fa-user"
+                                style="
+                                  font-size: 20px;
+                                  margin-top: 10px;
+                                  border-bottom: 0.5px solid #d0d7dd !important;
+                                  color: #d0d7dd;
+                                "
+                              ></i>
+                              <input
+                                type="text"
+                                id="aUsername"
+                                class="form-control input-blk"
+                                name="username"
+                                placeholder="Username"
+                                [(ngModel)]="loginPayload.username"
+                              />
+                            </div>
+                            <div
+                              class="col-md-6 mrg-top-15 a-pass-blk"
+                              style="display: flex"
+                            >
+                              <i
+                                class="fa fa-lock"
+                                style="
+                                  font-size: 20px;
+                                  margin-top: 10px;
+                                  border-bottom: 0.5px solid #d0d7dd;
+                                  color: #d0d7dd;
+                                "
+                              ></i>
+                              <input
+                                type="password"
+                                id="aPassword"
+                                class="form-control input-blk"
+                                name="password"
+                                placeholder="Password"
+                                [(ngModel)]="loginPayload.password"
+                                required
+                              />
+                            </div>
+                            <span style="color: red">{{ error }}</span>
+                            <div class="clearfix"></div>
+                            <div class="">
+                              <div class="">
+                                <button
+                                  id="normalButton1"
+                                  type="submit"
+                                  class="btn"
+                                  style="
+                                    width: auto;
+                                    margin-top: 20px;
+                                    margin-left: 10px;
+                                    margin-bottom: 0px;
+                                    background: #6772e4;
+                                    color: #fff;
+                                  "
+                                  type="submit"
+                                  (click)="login()"
+                                  [disabled]="
+                                    !loginPayload.username ||
+                                    !loginPayload.password
+                                  "
+                                >
+                                  Log in
+                                </button>
+                              </div>
+                              <div class="a-forgot-blk">
+                                Don't have an account?
+                                <a [routerLink]="'/register'">Register</a>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <!-- Teacher login form -->
+
+                  <!-- Teacher login form -->
+                  <div class="modal-header">
+                    <div
+                      (click)="this._STUDENT()"
+                      id="admin"
+                      class="header-title-block"
+                    >
+                      <div
+                        *ngIf="!this.student"
+                        class="title block-title"
+                        style="user-select: none"
+                      >
+                        Sign in as Students
+                      </div>
+                    </div>
+
+                    <div
+                      class="fields"
+                      [ngStyle]="{ display: student ? '' : 'none' }"
+                      id="adminBlock"
+                    >
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="title title-color">
+                            Sign in as Students
+                          </div>
+                          <div class="fieldsClosebtn" (click)="this._STUDENT()">
+                            <i class="fa fa-times pull-right"></i>
+                          </div>
+                        </div>
+                        <div
+                          class="a-login col-md-12 padding-none"
+                          id="adminLoginBlock"
+                        >
+                          <form>
+                            <div
+                              class="col-md-6 mrg-top-15"
+                              style="display: flex"
+                            >
+                              <i
+                                class="fa fa-user"
+                                style="
+                                  font-size: 20px;
+                                  margin-top: 10px;
+                                  border-bottom: 0.5px solid #d0d7dd !important;
+                                  color: #d0d7dd;
+                                "
+                              ></i>
+                              <input
+                                type="text"
+                                id="aUsername"
+                                class="form-control input-blk"
+                                name="username"
+                                placeholder="Username"
+                                [(ngModel)]="loginPayload.username"
+                              />
+                            </div>
+                            <div
+                              class="col-md-6 mrg-top-15 a-pass-blk"
+                              style="display: flex"
+                            >
+                              <i
+                                class="fa fa-lock"
+                                style="
+                                  font-size: 20px;
+                                  margin-top: 10px;
+                                  border-bottom: 0.5px solid #d0d7dd;
+                                  color: #d0d7dd;
+                                "
+                              ></i>
+                              <input
+                                type="password"
+                                id="aPassword"
+                                class="form-control input-blk"
+                                name="password"
+                                placeholder="Password"
+                                [(ngModel)]="loginPayload.password"
+                                required
+                              />
+                            </div>
+                            <span style="color: red">{{ error }}</span>
+                            <div class="clearfix"></div>
+                            <div class="">
+                              <div class="">
+                                <button
+                                  id="normalButton1"
+                                  type="submit"
+                                  class="btn"
+                                  style="
+                                    width: auto;
+                                    margin-top: 20px;
+                                    margin-left: 10px;
+                                    margin-bottom: 0px;
+                                    background: #6772e4;
+                                    color: #fff;
+                                  "
+                                  type="submit"
+                                  (click)="login()"
+                                  [disabled]="
+                                    !loginPayload.username ||
+                                    !loginPayload.password
+                                  "
+                                >
+                                  Log in
+                                </button>
+                              </div>
+                              <div class="a-forgot-blk">
+                                Don't have an account?
+                                <a [routerLink]="'/register'">Register</a>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <!-- Teacher login form -->
+
+                  <!-- Teacher login form -->
+                  <div class="modal-header">
+                    <div
+                      (click)="this._PARENT()"
+                      id="admin"
+                      class="header-title-block"
+                    >
+                      <div
+                        *ngIf="!this.parent"
+                        class="title block-title"
+                        style="user-select: none"
+                      >
+                        Sign in as Parents
+                      </div>
+                    </div>
+
+                    <div
+                      class="fields"
+                      [ngStyle]="{ display: parent ? '' : 'none' }"
+                      id="adminBlock"
+                    >
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="title title-color">
+                            Sign in as Parents
+                          </div>
+                          <div class="fieldsClosebtn" (click)="this._PARENT()">
+                            <i class="fa fa-times pull-right"></i>
+                          </div>
+                        </div>
+                        <div
+                          class="a-login col-md-12 padding-none"
+                          id="adminLoginBlock"
+                        >
+                          <form>
+                            <div
+                              class="col-md-6 mrg-top-15"
+                              style="display: flex"
+                            >
+                              <i
+                                class="fa fa-user"
+                                style="
+                                  font-size: 20px;
+                                  margin-top: 10px;
+                                  border-bottom: 0.5px solid #d0d7dd !important;
+                                  color: #d0d7dd;
+                                "
+                              ></i>
+                              <input
+                                type="text"
+                                id="aUsername"
+                                class="form-control input-blk"
+                                name="username"
+                                placeholder="Username"
+                                [(ngModel)]="loginPayload.username"
+                              />
+                            </div>
+                            <div
+                              class="col-md-6 mrg-top-15 a-pass-blk"
+                              style="display: flex"
+                            >
+                              <i
+                                class="fa fa-lock"
+                                style="
+                                  font-size: 20px;
+                                  margin-top: 10px;
+                                  border-bottom: 0.5px solid #d0d7dd;
+                                  color: #d0d7dd;
+                                "
+                              ></i>
+                              <input
+                                type="password"
+                                id="aPassword"
+                                class="form-control input-blk"
+                                name="password"
+                                placeholder="Password"
+                                [(ngModel)]="loginPayload.password"
+                                required
+                              />
+                            </div>
+                            <span style="color: red">{{ error }}</span>
+                            <div class="clearfix"></div>
+                            <div class="">
+                              <div class="">
+                                <button
+                                  id="normalButton1"
+                                  type="submit"
+                                  class="btn"
+                                  style="
+                                    width: auto;
+                                    margin-top: 20px;
+                                    margin-left: 10px;
+                                    margin-bottom: 0px;
+                                    background: #6772e4;
+                                    color: #fff;
+                                  "
+                                  type="submit"
+                                  (click)="login()"
+                                  [disabled]="
+                                    !loginPayload.username ||
+                                    !loginPayload.password
+                                  "
+                                >
+                                  Log in
+                                </button>
+                              </div>
+                              <div class="a-forgot-blk">
+                                Don't have an account?
+                                <a [routerLink]="'/register'">Register</a>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <!-- Teacher login form -->
+                </div>
+                <div class="block-triangle-end"></div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
