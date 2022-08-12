@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-
   //  console.log(this.loginPayload);
     this.auth.login(this.loginPayload).subscribe(
       (data: any) => {
@@ -33,13 +32,14 @@ export class LoginComponent implements OnInit {
         if(this.auth.haveRole() === "Admin"){
           this.router.navigate(['/admin']);
         }
-
       },
       (err) => {
         this.error = err.error;
       }
     );
   }
+
+  
 
   admin = false;
   teacher = false;
