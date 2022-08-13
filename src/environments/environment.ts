@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // BASE_URL: 'https://estudiez20220811180222.azurewebsites.net/api'
-  BASE_URL: 'http://192.168.137.93:5242/api',
+  BASE_URL: 'http://192.168.137.107:5242/api',
 };
 
 /*

@@ -9,10 +9,11 @@
             <div class="col-md-5 d-flex align-items-center">
                 <select class="form-control form-select" [(ngModel)]="this.selectedCourse">
                     <option value="">Select Course</option>
-                    <option *ngFor="let course of this.courses" [value]="course.id">{{course.name}}</option>
+                    <option *ngFor="let course of this.filteredCourses" [value]="course.id">{{course.name}}</option>
                 </select>
             </div>
-            <div class="col-md-3"><button class="btn btn-warning">Assign Course</button></div>
+            <div class="col-md-3"><button class="btn btn-warning" (click)="this.assignStudent()" [disabled]="this.selectedCourse === ''">Assign Course</button>
+            </div>
         </div>
     </div>
     <div *ngIf="this.isLoading" class="spinner-border text-warning my-5 mySpinner" role="status">

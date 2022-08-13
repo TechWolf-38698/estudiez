@@ -22,30 +22,21 @@ export class AssignIdCourseComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getAllCourses();
-    this.getStudentCourses(
-      parseInt(this.Route.snapshot.paramMap.get('id') + '')
-    );
     this.studentId = parseInt(this.Route.snapshot.paramMap.get('id') + '');
+    this.getAllCourses();
   }
 
   // Filter Common courses from courses
-  filterCourses() {
-    // this.courses
-    // this.studentCourses
-
-    //find comon courses from two arrays
-    //merge two arrays
+  filterCourses(data: any) {
     //remove duplicate courses
-    //this.filteredCourses = this.courses.filter(course => { 
-    let test = this.courses.concat(this.studentCourses).filter((item:any,index:any,self:any)=>{
-        return self.findIndex((t:any)=>{
-          return t.id === item.id;
-        }) === index
+    //remove courses that are already assigned to the student
+    this.filteredCourses = this.courses.filter((course: any) => {
+      return !data.some((studentCourse: any) => {
+        return studentCourse.id === course.id;
       });
+    });
 
-      console.log(test);
-      
+    console.log(this.filteredCourses);
   }
 
   getAllCourses() {
@@ -54,6 +45,9 @@ export class AssignIdCourseComponent implements OnInit {
       (data: any) => {
         this.isLoading = false;
         this.courses = data;
+        this.getStudentCourses(
+          parseInt(this.Route.snapshot.paramMap.get('id') + '')
+        );
       },
       (err: any) => {
         this.isLoading = false;
@@ -62,6 +56,7 @@ export class AssignIdCourseComponent implements OnInit {
     );
     // this.filterCourses();
   }
+
   getStudentCourses(id: number) {
     this.isLoading = true;
     let myId = parseInt(id + '');
@@ -69,25 +64,26 @@ export class AssignIdCourseComponent implements OnInit {
       (data: any) => {
         this.isLoading = false;
         this.studentCourses = data;
-        console.log(this.studentCourses);
+        // console.log(this.studentCourses);
+        this.filterCourses(this.studentCourses);
       },
       (err: any) => {
         this.isLoading = false;
         console.log(err);
       }
     );
-    this.filterCourses();
   }
-  assignStudent(id: number) {
-    console.log('course', id, 'student', this.studentId);
+  assignStudent() {
     let payLoad = {
-      courseId: id,
+      courseId: parseInt(this.selectedCourse),
       studentId: this.studentId,
       status: 'assigned',
     };
+    console.log(payLoad);
     this.AdminService.AssignStudentCourse(payLoad).subscribe((data: any) => {
       this.isLoading = false;
       this.getStudentCourses(this.studentId);
     });
+    this.selectedCourse = ''; 
   }
 }
