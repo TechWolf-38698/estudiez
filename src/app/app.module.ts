@@ -44,6 +44,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { IndexCourseComponent } from './pages/admin/course/index-course/index-course.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { AssignCourseComponent } from './pages/admin/course/assign-course/assign-course.component';
+import { AssignIdCourseComponent } from './pages/admin/course/assign-id-course/assign-id-course.component';
 
 
 export function tokenGetter() {
@@ -89,6 +91,8 @@ export function tokenGetter() {
     LoginComponent,
     RegisterComponent,
     IndexCourseComponent,
+    AssignCourseComponent,
+    AssignIdCourseComponent,
   ],
   imports: [
     BrowserModule,

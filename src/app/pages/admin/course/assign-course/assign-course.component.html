@@ -1,26 +1,28 @@
-<div class="row mt-2  justify-content-center align-items-center">
+<div class="col d-flex justify-content-center py-4">
+    <h1>Select Student</h1>
+</div>
+<div class="row py-2 justify-content-center align-items-center">
     <div *ngIf="!this.isLoading" class="table-responsive">
         <table class="table">
             <thead>
                 <tr>
                     <th class="text-center" scope="col">Name</th>
-                    <th class="text-center" scope="col">Discription</th>
+                    <th class="text-center" scope="col">Email</th>
+                    <th class="text-center" scope="col">Address</th>
                     <th class="text-center" scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody *ngIf="this.courses.length > 0">
-                <tr *ngFor="let course of courses">
-                    <td class="text-center">{{course.name}}</td>
-                    <td class="text-center">{{course.description}}</td>
+                <tr *ngFor="let student of students">
+                    <td class="text-center text-capitalize">{{student.name}}</td>
+                    <td class="text-center">{{student.email}}</td>
+                    <td class="text-center">{{student.address? student.address : "---"}}</td>
                     <td class="text-center">
-                        <i class="mars-0005 fas fa-pen-to-square"></i>
-                        <a (click)="onDelete(course.id)">
-                            <i class="mars-0005 fas fa-trash-alt"></i>
-                        </a>
+                        <a class="btn btn-warning btn-sm" routerLink="/admin/courses/assign/{{student.id}}">Assign</a>
                     </td>
                 </tr>
             </tbody>
-            <tbody *ngIf="this.courses.length == 0">
+            <tbody *ngIf="this.students.length == 0">
                 <td colspan="4" class="alert alert-danger">No Courses Found</td>
             </tbody>
         </table>

@@ -26,8 +26,15 @@ export class ManageCourseComponent implements OnInit {
     this.isLoading = true;
     this.adminService.RemoveCourse(id).subscribe((data) => {
       this.isLoading = false;
-      this.courses = data;
-      console.log(this.courses);
+      this.adminService.getAllCourses().subscribe((data) => {
+        this.isLoading = false;
+        this.courses = data;
+        console.log(this.courses);
+      }),
+        (error: any) => {
+          this.isLoading = false;
+          console.log(error);
+        };
     }),
       (error: any) => {
         this.isLoading = false;

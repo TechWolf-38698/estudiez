@@ -4,13 +4,52 @@
         <div class="row">
             <div class="col-11 mt-4">
                 <div class="col-12 d-flex justify-content-between align-items-center">
+                    <p class="col-3 m-0">Title</p>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Title" formControlName="title" />
+                        <div *ngIf="title?.touched && title?.invalid">
+                            <span class="invalid-feedback d-block" *ngIf="title?.errors?.['required']">
+                                This Field is required
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11 mt-4">
+                <div class="col-12 d-flex justify-content-between align-items-center">
+                    <p class="col-3 m-0">Description</p>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Description"
+                            formControlName="description" />
+                        <div *ngIf="description?.touched && description?.invalid">
+                            <span class="invalid-feedback d-block" *ngIf="description?.errors?.['required']">
+                                This Field is required
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11 mt-4">
+                <div class="col-12 d-flex justify-content-between align-items-center">
+                    <p class="col-3 m-0">Exam Type</p>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Exam Type"
+                            formControlName="examType" />
+                        <div *ngIf="examType?.touched && examType?.invalid">
+                            <span class="invalid-feedback d-block" *ngIf="examType?.errors?.['required']">
+                                This Field is required
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11 mt-4">
+                <div class="col-12 d-flex justify-content-between align-items-center">
                     <p class="col-3 m-0">Course</p>
                     <div class="col">
-                        <select class="form-control form-select" formControlName="course">
+                        <select class="form-control form-select" (change)="this.onCourseChange()" formControlName="course">
                             <option [value]="null">Select Course</option>
-                            <option value="a">lorem ipsum dummy text</option>
-                            <option value="b">lorem ipsum dummy text</option>
-                            <option value="c">lorem ipsum dummy text</option>
+                            <option *ngFor="let course of courses" [value]="course.id">{{course.name}}</option>
                         </select>
                         <div *ngIf="course?.touched && course?.invalid">
                             <span class="invalid-feedback d-block" *ngIf="course?.errors?.['required']">
@@ -24,14 +63,12 @@
                 <div class="col-12 d-flex justify-content-between align-items-center">
                     <p class="col-3 m-0">Batch</p>
                     <div class="col">
-                        <select class="form-control form-select" formControlName="batch">
+                        <select class="form-control form-select" formControlName="batchId">
                             <option [value]="null">Select Batch</option>
-                            <option value="a">lorem ipsum dummy text</option>
-                            <option value="b">lorem ipsum dummy text</option>
-                            <option value="c">lorem ipsum dummy text</option>
+                            <option *ngFor="let batch of batches" [value]="batch.id">{{batch.batchCode}}</option>
                         </select>
-                        <div *ngIf="batch?.touched && batch?.invalid">
-                            <span class="invalid-feedback d-block" *ngIf="batch?.errors?.['required']">
+                        <div *ngIf="batchId?.touched && batchId?.invalid">
+                            <span class="invalid-feedback d-block" *ngIf="batchId?.errors?.['required']">
                                 This Field is required
                             </span>
                         </div>
@@ -55,7 +92,8 @@
                 <div class="col-12 d-flex justify-content-between align-items-center">
                     <p class="col-3 m-0">Total Marks</p>
                     <div class="col">
-                        <input type="number" class="form-control" placeholder="Total Marks" formControlName="totalMarks">
+                        <input type="number" class="form-control" placeholder="Total Marks"
+                            formControlName="totalMarks">
                         <div *ngIf="totalMarks?.touched && totalMarks?.invalid">
                             <span class="invalid-feedback d-block" *ngIf="totalMarks?.errors?.['required']">
                                 This Field is required

@@ -1,1 +1,66 @@
-<p>batch-add works!</p>
+{{form.value | json}}
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="row px-3 py-5 justify-content-center">
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-11 mt-4">
+                <div class="col-12 d-flex justify-content-between align-items-center">
+                    <p class="col-3 m-0">Batch Code</p>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Name" formControlName="batchCode" />
+                        <div *ngIf="batchCode?.touched && batchCode?.invalid">
+                            <span class="invalid-feedback d-block" *ngIf="batchCode?.errors?.['required']">
+                                This Field is required
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11 mt-4">
+                <div class="col-12 d-flex justify-content-between align-items-center">
+                    <p class="col-3 m-0">Course</p>
+                    <div class="col">
+                        <select class="form-control form-select" formControlName="courseId">
+                            <option [value]="null">Select Course</option>
+                            <option *ngFor="let course of courses" [value]="course.id">{{course.name}}</option>
+                        </select>
+                        <div *ngIf="courseId?.touched && courseId?.invalid">
+                            <span class="invalid-feedback d-block" *ngIf="courseId?.errors?.['required']">
+                                This Field is required
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11 mt-4">
+                <div class="col-12 d-flex justify-content-between align-items-center">
+                    <p class="col-3 m-0">Teacher</p>
+                    <div class="col">
+                        <select class="form-control form-select" formControlName="teacherId">
+                            <option [value]="null">Select Teacher</option>
+                            <option *ngFor="let teacher of teachers" [value]="teacher.id">{{teacher.name}}</option>
+                        </select>
+                        <div *ngIf="teacherId?.touched && teacherId?.invalid">
+                            <span class="invalid-feedback d-block" *ngIf="teacherId?.errors?.['required']">
+                                This Field is required
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11 mt-4">
+                <div class="col-12 d-flex justify-content-between align-items-center">
+                    <p class="col-3 m-0"></p>
+                    <div class="col">
+                        <button *ngIf="!loading" type="submit" class="btn btn-warning" [disabled]="form.invalid"><i
+                                class="fas fa-plus-circle me-2"></i> Add</button>
+                        <button *ngIf="loading" class="btn btn-primary" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
+                            Loading...
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>

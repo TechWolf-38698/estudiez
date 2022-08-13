@@ -1,0 +1,21 @@
+<div class="col d-flex justify-content-center py-4">
+    <h1>Assign Courses</h1>
+</div>
+
+<div class="row py-2 justify-content-center align-items-center">
+
+    <div *ngIf="!this.isLoading" class="table-responsive">
+        <div class="row justify-content-center">
+            <div class="col-md-5 d-flex align-items-center">
+                <select class="form-control form-select" [(ngModel)]="this.selectedCourse">
+                    <option value="">Select Course</option>
+                    <option *ngFor="let course of this.courses" [value]="course.id">{{course.name}}</option>
+                </select>
+            </div>
+            <div class="col-md-3"><button class="btn btn-warning">Assign Course</button></div>
+        </div>
+    </div>
+    <div *ngIf="this.isLoading" class="spinner-border text-warning my-5 mySpinner" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>

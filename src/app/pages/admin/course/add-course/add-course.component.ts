@@ -16,7 +16,7 @@ export class AddCourseComponent implements OnInit {
 
   form = this.fb.group({
     name: ['', Validators.required],
-    discription: ['', Validators.required],
+    description: ['', Validators.required],
   });
 
   ngOnInit(): void {}
@@ -43,7 +43,7 @@ export class AddCourseComponent implements OnInit {
   get name() {
     return this.form.get('name');
   }
-  get discription() {
-    return this.form.get('discription');
+  get description() {
+    return this.form.get('description');
   }
 }

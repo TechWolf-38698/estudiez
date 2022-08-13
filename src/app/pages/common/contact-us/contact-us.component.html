@@ -1,11 +1,58 @@
 <app-header title="Get in Touch" icon=""></app-header>
-<div class="container py-5 mt-n10 animated--fade-in-up" style="height: auto; animation-duration: 500ms !important;">
-    <div class="row justify-content-around">
-        <div class="col-lg-5 bg-white  rounded">
-            <h1>sdsd</h1>
+<div class="container py-5 mt-n10 animated--fade-in-up bg-white rounded" style="height: auto; animation-duration: 500ms !important;">
+    <div class="row">
+        <div class="col-md-5 mr-auto text-center">
+            <h1 style="font-size: 35px; font-weight: bold;">Contact Us</h1>
+            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quaerat autem corrupti
+                asperiores accusantium et fuga! Facere excepturi, quo eos, nobis doloremque dolor labore expedita illum
+                iusto, aut repellat fuga!</p>
+
+            <ul class="list-unstyled pl-md-5 mb-5">
+                <li class="d-flex text-black mb-2">
+                    <span class="me-3 "><i class="fa-solid fa-map-location-dot fa-2x"></i></span> 34 Street Name, City Name Here, United
+                    States
+                </li>
+                <li class="d-flex text-black mb-2"><span class="mr-3"><span class="icon-phone"></span></span> +1 (222)
+                    345 6789</li>
+                <li class="d-flex text-black"><span class="mr-3"><span class="icon-envelope-o"></span></span>
+                    info@mywebsite.com </li>
+            </ul>
         </div>
-        <div class="col-lg-5 bg-white  rounded">
-            <h1>sdsd</h1>
+
+        <div class="col-md-6">
+            <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                <div class="row">
+
+                    <div class="col-md-12 form-group">
+                        <label for="name" class="col-form-label">Name</label>
+                        <input type="text" class="form-control rounded" placeholder="Name" name="name" id="name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label for="email" class="col-form-label">Email</label>
+                        <input type="email" class="form-control rounded" placeholder="Email" name="email" id="email">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label for="message" class="col-form-label ">Message</label>
+                        <textarea class="form-control rounded" name="message" placeholder="Message" id="message" cols="30"
+                            rows="7"></textarea>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-warning">
+                    </div>
+                </div>
+            </form>
+
+            <div *ngIf="" class="myValidFeedback">
+                Your message was sent, thank you!
+            </div>
         </div>
     </div>
+
 </div>

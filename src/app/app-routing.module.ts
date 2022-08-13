@@ -28,12 +28,17 @@ import { AdminGuard } from './guards/admin.guard';
 import { IndexCourseComponent } from './pages/admin/course/index-course/index-course.component';
 import { ManageCourseComponent } from './pages/admin/course/manage-course/manage-course.component';
 import { AddCourseComponent } from './pages/admin/course/add-course/add-course.component';
+import { BatchIndexComponent } from './pages/admin/batch/batch-index/batch-index.component';
+import { BatchManageComponent } from './pages/admin/batch/batch-manage/batch-manage.component';
+import { BatchAddComponent } from './pages/admin/batch/batch-add/batch-add.component';
+import { AssignCourseComponent } from './pages/admin/course/assign-course/assign-course.component';
+import { AssignIdCourseComponent } from './pages/admin/course/assign-id-course/assign-id-course.component';
 
 // const routes: Routes = [
 //   { path: '', redirectTo: '/home', pathMatch: 'full' },
 //   { path: 'home', component: AdminHomeComponent },
 //   { path: 'feedback', component: FeedbackComponent },
-//   { path: 'contactus', component: ContactUsComponent },
+  // { path: 'contactus', component: ContactUsComponent },
 //   // Students
 //   {
 //     path: 'students',
@@ -102,6 +107,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'contactus', component: ContactUsComponent },
   {
     path: 'admin',
     children: [
@@ -140,6 +146,49 @@ const routes: Routes = [
           { path: '', redirectTo: 'manage', pathMatch: 'full' },
           { path: 'manage', component: ManageCourseComponent },
           { path: 'add', component: AddCourseComponent },
+          { path: 'assign', component: AssignCourseComponent },
+          { path: 'assign/:id', component: AssignIdCourseComponent },
+        ],
+      },
+      // Batches
+      {
+        path: 'batches',
+        component: BatchIndexComponent,
+        children: [
+          { path: '', redirectTo: 'manage', pathMatch: 'full' },
+          { path: 'manage', component: BatchManageComponent },
+          { path: 'add', component: BatchAddComponent },
+        ],
+      },
+      // Tests
+      {
+        path: 'tests',
+        component: TestsIndexComponent,
+        children: [
+          { path: '', redirectTo: 'manage', pathMatch: 'full' },
+          { path: 'manage', component: TestsManageComponent },
+          { path: 'add', component: TestsAddComponent },
+        ],
+      },
+      // Test Marks
+      {
+        path: 'testmarks',
+        component: TestMarksIndexComponent,
+        children: [
+          { path: '', redirectTo: 'manage', pathMatch: 'full' },
+          { path: 'manage', component: TestMarksManageComponent },
+          { path: 'add', component: TestMarksAddComponent },
+          { path: 'add/:id', component: TestMarksAddComponent },
+        ],
+      },
+      // Extra Classes
+      {
+        path: 'extra-classes',
+        component: IndexExtraClassesComponent,
+        children: [
+          { path: '', redirectTo: 'manage', pathMatch: 'full' },
+          { path: 'manage', component: ManageClassesComponent },
+          { path: 'add', component: AddClassesComponent },
         ],
       },
     ],
